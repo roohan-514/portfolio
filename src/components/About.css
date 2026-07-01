@@ -1,0 +1,60 @@
+.about-content {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+.about-text {
+  flex: 1.5;
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill-tag {
+  background: rgba(216, 90, 48, 0.15);
+  color: #D85A30;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(216, 90, 48, 0.3);
+  transition: all 0.3s;
+}
+.skill-tag:hover {
+  background: #D85A30;
+  color: #fff;
+}
+.about-stats {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.stat-item .CircularProgressbar {
+  width: 100px;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  .about-stats {
+    width: 100%;
+  }
+}
