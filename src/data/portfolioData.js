@@ -119,6 +119,16 @@ const portfolioData = {
       endDate: "2025",
       marks: "3.0+ CGPA",
       image: "/images/education/fast.jpg"
+    },
+    {
+      id: 2,
+      degree: "ICS (Intermediate in Computer Science)",
+      institution: "Government College University (GCU), Lahore",
+      location: "Lahore, Pakistan",
+      startDate: "2019",
+      endDate: "2021",
+      marks: "90%",
+      image: "/images/education/gcu.jpg"
     }
   ],
 
