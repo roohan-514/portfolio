@@ -2,26 +2,28 @@ const portfolioData = {
   profile: {
     name: "Syed Roohan Ali Rizvi",
     title: "AI & Machine Learning Enthusiast",
-    tagline: "Full-Stack Developer | Building Intelligent Solutions with AI & Computer Vision",
+    tagline: "AI & Full-Stack Developer | MLOps | System Design | Open Source",
     profilePicture: "/images/Profile.jpeg",
     university: "FAST National University of Computer and Emerging Sciences (NUCES)",
     location: "Pakistan",
     email: "roohan.rizvi@gmail.com",
     linkedin: "https://www.linkedin.com/in/roohan-ali-8a4b082a0/",
     github: "https://github.com/roohan-514",
-    about: "I'm a passionate developer with diverse interests spanning Artificial Intelligence, Machine Learning, Computer Vision, Deep Learning, Data Science, Full-Stack Web Development, Cloud Computing, and Blockchain Technology. I love building AI-powered real-world applications and exploring cutting-edge technologies.",
+    about: "I'm an AI & Full-Stack Developer building production-grade intelligent systems — from RAG chatbots and MLOps pipelines to real-time computer vision and payment platforms. I love architecting scalable solutions, contributing to open source, and writing about what I build.",
     skills: [
       "Python", "JavaScript", "TypeScript", "C", "C++",
       "React", "Angular", "Node.js", "Express.js", "FastAPI",
-      "TensorFlow", "OpenCV", "YOLO", "XGBoost",
-      "PostgreSQL", "MongoDB", "SQLite",
-      "Git", "Docker", "Postman"
+      "LangChain", "TensorFlow", "PyTorch", "OpenCV", "YOLO", "XGBoost",
+      "PostgreSQL", "MongoDB", "SQLite", "ChromaDB",
+      "Git", "Docker", "MLflow", "Prometheus", "Grafana",
+      "OpenAI", "Stripe", "Socket.IO", "Three.js", "WebRTC"
     ],
     skillLevels: [
       { name: "Problem Solving", level: 85 },
       { name: "AI & ML", level: 88 },
       { name: "Web Development", level: 90 },
-      { name: "Version Control", level: 82 }
+      { name: "System Design", level: 80 },
+      { name: "DevOps & MLOps", level: 78 }
     ]
   },
 
@@ -49,7 +51,7 @@ const portfolioData = {
       title: "AI Facial Recognition Attendance",
       description: "AI-powered attendance system using facial recognition for automated, contactless check-ins.",
       technologies: ["Python", "OpenCV", "Face Recognition", "FastAPI"],
-      githubLink: "https://github.com/roohan-514/facial-recognition-attendance",
+      githubLink: "https://github.com/roohan-514/AI-Facial-Recognition-Attendance",
       featured: false,
       image: "/images/projects/FYP.jpeg"
     },
@@ -104,6 +106,60 @@ const portfolioData = {
       description: "AI-powered career assistant that helps build resumes, prepare for interviews, and discover career paths.",
       technologies: ["Python", "React", "OpenAI", "FastAPI"],
       githubLink: "https://github.com/roohan-514/ai-resume-assistant",
+      featured: false,
+      image: "/images/projects/FYP.jpeg"
+    },
+    {
+      id: 10,
+      title: "RAG Chatbot System",
+      description: "Retrieval-Augmented Generation chatbot that answers questions based on your documents. Built with LangChain, ChromaDB, and OpenAI.",
+      technologies: ["Python", "LangChain", "ChromaDB", "FastAPI", "React", "OpenAI"],
+      githubLink: "https://github.com/roohan-514/rag-chatbot-system",
+      featured: true,
+      image: "/images/projects/FYP.jpeg"
+    },
+    {
+      id: 11,
+      title: "MLOps Production Pipeline",
+      description: "End-to-end ML production pipeline with MLflow tracking, model registry, FastAPI serving, Streamlit monitoring, and Docker deployment.",
+      technologies: ["Python", "MLflow", "FastAPI", "Docker", "Streamlit", "Prometheus"],
+      githubLink: "https://github.com/roohan-514/mlops-production-pipeline",
+      featured: true,
+      image: "/images/projects/FYP.jpeg"
+    },
+    {
+      id: 12,
+      title: "AI Code Review Assistant",
+      description: "AI-powered code review tool that analyzes code quality, finds bugs, detects security vulnerabilities, and suggests improvements using OpenAI.",
+      technologies: ["Python", "OpenAI", "FastAPI", "React", "Docker"],
+      githubLink: "https://github.com/roohan-514/ai-code-review-assistant",
+      featured: true,
+      image: "/images/projects/FYP.jpeg"
+    },
+    {
+      id: 13,
+      title: "System Design & Architecture",
+      description: "In-depth architecture documentation for production AI/ML systems with C4 diagrams, scaling analysis, deployment strategies, and design trade-offs.",
+      technologies: ["System Design", "Architecture", "C4 Diagrams", "Distributed Systems"],
+      githubLink: "https://github.com/roohan-514/system-design-architecture",
+      featured: false,
+      image: "/images/projects/FYP.jpeg"
+    },
+    {
+      id: 14,
+      title: "Open Source Contributions",
+      description: "Open source toolkit featuring gitstat — a Python CLI tool that generates beautiful GitHub repo analytics reports. Includes contribution guides and best practices.",
+      technologies: ["Python", "CLI", "GitHub API", "Open Source"],
+      githubLink: "https://github.com/roohan-514/open-source-contributions",
+      featured: false,
+      image: "/images/projects/FYP.jpeg"
+    },
+    {
+      id: 15,
+      title: "Technical Blog Posts",
+      description: "Collection of technical articles about building production AI/ML systems — real-time computer vision, RAG chatbots, MLOps pipelines, and payment systems.",
+      technologies: ["Technical Writing", "AI", "ML", "Tutorials"],
+      githubLink: "https://github.com/roohan-514/technical-blog-posts",
       featured: false,
       image: "/images/projects/FYP.jpeg"
     }

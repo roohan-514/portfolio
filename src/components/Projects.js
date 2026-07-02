@@ -3,12 +3,13 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import './Projects.css';
 
 const Projects = ({ projects, profile }) => {
+  const sorted = [...projects].sort((a, b) => (a.featured === b.featured ? 0 : a.featured ? -1 : 1));
   return (
     <section id="projects" className="projects">
       <div className="container">
         <h2 className="section-title">Projects</h2>
         <div className="projects-grid">
-          {projects.map((project) => (
+          {sorted.map((project) => (
             <div key={project.id} className={`project-card card ${project.featured ? 'featured' : ''}`}>
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
