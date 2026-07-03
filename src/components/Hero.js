@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiChevronDown } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiChevronDown, FiDownload } from 'react-icons/fi';
 import './Hero.css';
 
 const Hero = ({ profile }) => {
@@ -65,6 +65,9 @@ const Hero = ({ profile }) => {
           </Link>
           <a href={`mailto:${profile.email}`} className="btn btn-outline">
             Hire Me
+          </a>
+          <a href={`${process.env.PUBLIC_URL}/documents/resume.pdf`} download className="btn btn-outline">
+            <FiDownload /> Resume
           </a>
         </motion.div>
         <motion.div className="hero-socials" variants={itemVariants}>
