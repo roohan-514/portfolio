@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './TerminalIntro.css';
 
 const bootLines = [
-  '> Loading kernel modules...[OK]',
-  '> Initializing neural interface...[OK]',
-  '> Establishing secure connection...[OK]',
-  '> Loading portfolio modules...[OK]',
-  '> Calibrating display...[OK]',
+  '> Initializing neural network layers...[OK]',
+  '> Loading pretrained model weights...[OK]',
+  '> Spiking neurons — forward pass...[OK]',
+  '> Backpropagating through time...[OK]',
+  '> Embedding space initialized...[OK]',
+  '> Attention mechanism engaged...[OK]',
+  '> Inference engine ready...[OK]',
 ];
 
 const TerminalIntro = ({ onComplete }) => {
@@ -73,7 +75,7 @@ const TerminalIntro = ({ onComplete }) => {
         >
           <div className="terminal-content">
             <div className="terminal-header">
-              <span className="terminal-blink">SYSTEM INITIALIZING...</span>
+              <span className="terminal-blink">NEURAL NETWORK BOOT SEQUENCE... &lt;loss=0.873&gt;</span>
             </div>
 
             <div className="terminal-lines">
@@ -107,7 +109,7 @@ const TerminalIntro = ({ onComplete }) => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                SYSTEM READY
+                MODEL CONVERGED — READY FOR INFERENCE
               </motion.p>
             )}
 

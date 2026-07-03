@@ -23,10 +23,11 @@
 }
 
 .terminal-blink {
-  color: #00ff41;
+  color: #00d4ff;
   font-size: 1.2rem;
   font-weight: 700;
   animation: blink 1s step-end infinite;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 @keyframes blink {
@@ -39,7 +40,7 @@
 }
 
 .terminal-line {
-  color: #00ff41;
+  color: #88ddff;
   font-size: 0.85rem;
   margin-bottom: 8px;
   opacity: 0.9;
@@ -55,31 +56,35 @@
 .terminal-progress-bar {
   flex: 1;
   height: 4px;
-  background: rgba(0, 255, 65, 0.2);
+  background: rgba(0, 212, 255, 0.15);
   border-radius: 2px;
   overflow: hidden;
 }
 
 .terminal-progress-fill {
   height: 100%;
-  background: #00ff41;
+  background: linear-gradient(90deg, #00d4ff, #7c3aed);
   border-radius: 2px;
   transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
 .terminal-progress-text {
-  color: #00ff41;
+  color: #00d4ff;
   font-size: 0.85rem;
   min-width: 40px;
   text-align: right;
 }
 
 .terminal-ready {
-  color: #00ff41;
-  font-size: 1.5rem;
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.4rem;
   font-weight: 700;
   text-align: center;
-  text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
 }
 
 .terminal-skip {
