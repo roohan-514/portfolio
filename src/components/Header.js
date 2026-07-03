@@ -17,7 +17,7 @@ const Header = ({ profile }) => {
     { id: 'hero', label: 'Home' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'certifications', label: 'Certificates' },
+
     { id: 'contact', label: 'Contact' },
   ];
 
