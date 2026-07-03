@@ -33,7 +33,7 @@ const portfolioData = {
       title: "Urdu Deepfake Audio Detection",
       description: "Detecting deepfake Urdu audio using VGG16-based transformer models for robust audio forensics.",
       technologies: ["Python", "TensorFlow", "VGG16", "Deep Learning"],
-      githubLink: "https://github.com/roohan-514/urdu-deepfake-audio-detection",
+      githubLink: "https://github.com/roohan-514/DEEP-FAKE-AUDIO-DETECTION",
       link: "",
       featured: true,
       year: "2025",
