@@ -15,11 +15,9 @@ const Header = ({ profile }) => {
 
   const navItems = [
     { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'education', label: 'Education' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'certifications', label: 'Certifications' },
+    { id: 'certifications', label: 'Certificates' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -46,7 +44,7 @@ const Header = ({ profile }) => {
             </Link>
           ))}
         </nav>
-        <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
+        <button className="menu-btn" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
         </button>
       </div>

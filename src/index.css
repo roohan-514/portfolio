@@ -9,25 +9,21 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0f;
   color: #e0e0e0;
-  min-height: 100vh;
   overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #0a0a0f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D85A30;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #c04d26;
+  background: #00d4ff;
+  border-radius: 3px;
 }
 
 .container {
@@ -37,25 +33,7 @@ body {
 }
 
 section {
-  padding: 80px 0;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 50px;
-  color: #fff;
-  position: relative;
-}
-.section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #D85A30, #ff8c42);
-  margin: 10px auto 0;
-  border-radius: 2px;
+  padding: 100px 0;
 }
 
 a {
@@ -68,53 +46,13 @@ img {
   height: auto;
 }
 
-.card {
-  background: linear-gradient(145deg, #2d2d2d, #3a3a3a);
-  border-radius: 16px;
-  padding: 25px;
-  border: 1px solid #444;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(216, 90, 48, 0.15);
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  font-family: inherit;
-}
-.btn-primary {
-  background: linear-gradient(135deg, #D85A30, #ff8c42);
-  color: #fff;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(216, 90, 48, 0.4);
-}
-.btn-outline {
-  background: transparent;
-  color: #D85A30;
-  border: 2px solid #D85A30;
-}
-.btn-outline:hover {
-  background: #D85A30;
-  color: #fff;
+::selection {
+  background: #00d4ff33;
+  color: #00d4ff;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 50px 0;
-  }
-  .section-title {
-    font-size: 1.6rem;
-    margin-bottom: 35px;
+    padding: 60px 0;
   }
 }

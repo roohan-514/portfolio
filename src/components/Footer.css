@@ -1,16 +1,87 @@
 .footer {
-  padding: 30px 0;
-  border-top: 1px solid #333;
+  padding: 40px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(10, 10, 15, 0.5);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer-center {
+  flex: 1;
   text-align: center;
 }
-.footer-text {
-  font-size: 0.85rem;
+
+.footer-built {
+  font-size: 0.8rem;
   color: #888;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
 }
+
 .footer-heart {
-  color: #D85A30;
+  color: #00d4ff;
+  font-size: 0.85rem;
+}
+
+.footer-right {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.footer-right a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.3s;
+  letter-spacing: 1px;
+}
+.footer-right a:hover {
+  color: #00d4ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: #555;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right {
+    justify-content: center;
+  }
 }

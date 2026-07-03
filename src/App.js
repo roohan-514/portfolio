@@ -1,34 +1,38 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import portfolioData from './data/portfolioData';
+import TerminalIntro from './components/TerminalIntro';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Education from './components/Education';
-import Experience from './components/Experience';
 import Certifications from './components/Certifications';
-import Contact from './components/Contact';
+import Education from './components/Education';
 import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  const { profile, projects, education, experience, certifications } = portfolioData;
+  const [loading, setLoading] = useState(true);
+  const { profile, projects, education, certifications, skills } = portfolioData;
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <TerminalIntro onComplete={() => setLoading(false)} />;
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header profile={profile} />
-        <Hero profile={profile} />
-        <About profile={profile} />
-        <Projects projects={projects} profile={profile} />
-        <Education education={education} />
-        <Experience experience={experience} />
-        <Certifications certifications={certifications} />
-        <Contact profile={profile} />
-        <Footer profile={profile} />
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Header profile={profile} />
+      <Hero profile={profile} />
+      <About profile={profile} />
+      <Skills skills={skills} />
+      <Projects projects={projects} profile={profile} />
+      <Certifications certifications={certifications} />
+      <Education education={education} />
+      <Footer profile={profile} />
+    </div>
   );
 }
 

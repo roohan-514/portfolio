@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { Typewriter } from 'react-simple-typewriter';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FiGithub, FiLinkedin, FiMail, FiChevronDown } from 'react-icons/fi';
 import './Hero.css';
 
 const Hero = ({ profile }) => {
@@ -12,46 +13,80 @@ const Hero = ({ profile }) => {
     "Computer Vision Explorer"
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <section id="hero" className="hero">
-      <div className="hero-overlay"></div>
-      <div className="hero-content">
-        <div className="hero-text">
-          <p className="hero-greeting">Hello, I'm</p>
-          <h1 className="hero-name">{profile.name}</h1>
-          <h2 className="hero-title">
-            <Typewriter
-              words={taglines}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={40}
-              delaySpeed={1500}
-            />
-          </h2>
-          <p className="hero-tagline">{profile.tagline}</p>
-          <div className="hero-actions">
-            <Link to="projects" smooth={true} duration={500} className="btn btn-primary">
-              View My Work
-            </Link>
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-              GitHub
-            </a>
-          </div>
-          <div className="hero-socials">
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <FiGithub />
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FiLinkedin />
-            </a>
-            <a href={`mailto:${profile.email}`} aria-label="Email">
-              <FiMail />
-            </a>
-          </div>
-        </div>
+      <div className="hero-particles">
+        {[...Array(6)].map((_, i) => (
+          <div key={i} className={`particle particle-${i + 1}`} />
+        ))}
       </div>
+      <motion.div
+        className="hero-content"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.p className="hero-greeting" variants={itemVariants}>
+          Hi, Welcome to <span className="hero-greeting-name">{profile.shortName}'s</span>
+        </motion.p>
+        <motion.h1 className="hero-name" variants={itemVariants}>
+          {profile.name}
+        </motion.h1>
+        <motion.h2 className="hero-title" variants={itemVariants}>
+          <Typewriter
+            words={taglines}
+            loop={0}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={40}
+            delaySpeed={1500}
+          />
+        </motion.h2>
+        <motion.p className="hero-tagline" variants={itemVariants}>
+          {profile.tagline}
+        </motion.p>
+        <motion.div className="hero-actions" variants={itemVariants}>
+          <Link to="projects" smooth={true} duration={500} className="btn btn-primary">
+            View Projects
+          </Link>
+          <a href={`mailto:${profile.email}`} className="btn btn-outline">
+            Hire Me
+          </a>
+        </motion.div>
+        <motion.div className="hero-socials" variants={itemVariants}>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <FiGithub />
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FiLinkedin />
+          </a>
+          <a href={`mailto:${profile.email}`} aria-label="Email">
+            <FiMail />
+          </a>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="hero-scroll"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2, repeat: Infinity, duration: 1.5, repeatType: 'reverse' }}
+      >
+        <FiChevronDown />
+      </motion.div>
     </section>
   );
 };

@@ -8,10 +8,10 @@
   transition: all 0.3s ease;
 }
 .header-scrolled {
-  background: rgba(26, 26, 26, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(16px);
   padding: 10px 0;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 .header-container {
   max-width: 1200px;
@@ -22,38 +22,42 @@
   align-items: center;
 }
 .header-logo {
-  font-size: 1.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #D85A30;
+  color: #00d4ff;
   cursor: pointer;
-  border: 2px solid #D85A30;
-  width: 45px;
-  height: 45px;
+  border: 2px solid #00d4ff;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: all 0.3s;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 .header-logo:hover {
-  background: #D85A30;
-  color: #fff;
+  background: #00d4ff;
+  color: #0a0a0f;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
 }
 .header-nav {
   display: flex;
   gap: 30px;
 }
 .nav-link {
-  color: #ccc;
-  font-size: 0.9rem;
-  font-weight: 400;
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s;
   position: relative;
+  letter-spacing: 0.5px;
 }
 .nav-link:hover,
 .nav-active {
-  color: #D85A30;
+  color: #00d4ff;
 }
 .nav-link::after {
   content: '';
@@ -62,8 +66,9 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #D85A30;
+  background: #00d4ff;
   transition: width 0.3s;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 .nav-link:hover::after,
 .nav-active::after {
@@ -75,6 +80,7 @@
   border: none;
   color: #fff;
   cursor: pointer;
+  padding: 5px;
 }
 @media (max-width: 768px) {
   .menu-btn {
@@ -86,13 +92,14 @@
     right: -100%;
     width: 70%;
     height: 100vh;
-    background: rgba(26, 26, 26, 0.98);
+    background: rgba(10, 10, 15, 0.98);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 25px;
     transition: right 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
   }
   .nav-open {
     right: 0;

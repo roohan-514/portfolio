@@ -1,60 +1,103 @@
 .about-content {
   display: flex;
-  gap: 50px;
-  align-items: flex-start;
+  gap: 60px;
+  align-items: center;
 }
+
+.about-image-wrapper {
+  flex-shrink: 0;
+}
+
+.about-image-frame {
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+.about-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00d4ff22, #7c3aed22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-initials {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(0, 212, 255, 0.4);
+  letter-spacing: 4px;
+}
+
 .about-text {
-  flex: 1.5;
+  flex: 1;
 }
-.about-text p {
-  font-size: 1rem;
+
+.about-description {
+  font-size: 1.05rem;
   line-height: 1.8;
   color: #ccc;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
-.about-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+
+.about-description-secondary {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #888;
+  margin-bottom: 30px;
 }
-.skill-tag {
-  background: rgba(216, 90, 48, 0.15);
-  color: #D85A30;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  border: 1px solid rgba(216, 90, 48, 0.3);
-  transition: all 0.3s;
-}
-.skill-tag:hover {
-  background: #D85A30;
-  color: #fff;
-}
+
 .about-stats {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
 }
-.stat-item {
+
+.about-stat {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
-.stat-item .CircularProgressbar {
-  width: 100px;
+
+.about-stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.stat-label {
+
+.about-stat-label {
   font-size: 0.85rem;
-  color: #aaa;
-  text-align: center;
+  color: #888;
+  font-family: 'JetBrains Mono', monospace;
 }
+
+.about-cta {
+  display: inline-flex;
+}
+
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
+    text-align: center;
+  }
+  .about-image-frame {
+    width: 200px;
+    height: 240px;
   }
   .about-stats {
-    width: 100%;
+    justify-content: center;
+  }
+  .about-cta {
+    margin: 0 auto;
   }
 }
