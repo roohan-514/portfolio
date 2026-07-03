@@ -26,7 +26,7 @@ const About = ({ profile }) => {
           >
             <div className="about-image-frame">
               {profile.profilePicture ? (
-                <img src={profile.profilePicture} alt={profile.name} className="about-image" />
+                <img src={process.env.PUBLIC_URL + profile.profilePicture} alt={profile.name} className="about-image" />
               ) : (
                 <div className="about-image-placeholder">
                   <span className="about-initials">{initials}</span>

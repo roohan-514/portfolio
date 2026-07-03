@@ -9,24 +9,55 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border-color: rgba(0,212,255,0.15);
 }
 .project-card.featured {
   grid-column: 1 / -1;
 }
 
 .project-image {
-  height: 200px;
+  height: 220px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
-.project-image-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
+.project-image-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pattern-circle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.project-icon {
+  font-size: 3.5rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 .project-year {
@@ -34,12 +65,13 @@
   top: 12px;
   right: 12px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.25);
   padding: 4px 10px;
   border-radius: 6px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .project-body {
@@ -48,6 +80,7 @@
   flex-direction: column;
   gap: 12px;
   flex: 1;
+  background: linear-gradient(180deg, #0d0d1a, #0a0a0f);
 }
 
 .project-title {
@@ -70,6 +103,11 @@
   gap: 6px;
 }
 
+.tag-more {
+  background: rgba(255,255,255,0.06) !important;
+  color: #666 !important;
+}
+
 .project-links {
   margin-top: 4px;
 }
@@ -80,12 +118,13 @@
   gap: 6px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: #00d4ff;
   letter-spacing: 1px;
   transition: all 0.3s;
   padding: 8px 0;
+  opacity: 0.8;
 }
 .project-link:hover {
+  opacity: 1;
   text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
   gap: 10px;
 }
@@ -98,5 +137,11 @@
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+  .project-image {
+    height: 180px;
+  }
+  .project-icon {
+    font-size: 2.8rem;
   }
 }
