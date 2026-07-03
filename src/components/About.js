@@ -25,9 +25,13 @@ const About = ({ profile }) => {
             transition={{ duration: 0.6 }}
           >
             <div className="about-image-frame">
-              <div className="about-image-placeholder">
-                <span className="about-initials">{initials}</span>
-              </div>
+              {profile.profilePicture ? (
+                <img src={profile.profilePicture} alt={profile.name} className="about-image" />
+              ) : (
+                <div className="about-image-placeholder">
+                  <span className="about-initials">{initials}</span>
+                </div>
+              )}
             </div>
           </motion.div>
 

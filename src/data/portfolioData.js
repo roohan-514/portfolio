@@ -5,8 +5,8 @@ const portfolioData = {
     title: "AI & Machine Learning Enthusiast",
     tagline: "AI & Full-Stack Developer | MLOps | System Design | Open Source",
     subtitle: "Architecting Intelligent Experiences",
-    profilePicture: "",
-    university: "FAST National University of Computer and Emerging Sciences (NUCES)",
+    profilePicture: "/images/profile.png",
+    university: "FAST NUCES | BS Data Science",
     location: "Pakistan",
     email: "roohan.rizvi@gmail.com",
     linkedin: "https://www.linkedin.com/in/roohan-ali-8a4b082a0/",
@@ -198,39 +198,36 @@ const portfolioData = {
   education: [
     {
       id: 1,
-      degree: "BS Computer Science — AI",
+      degree: "BS Data Science",
       institution: "FAST National University of Computer and Emerging Sciences (NUCES)",
       location: "Pakistan",
       startDate: "2021",
       endDate: "2025",
       status: "Completed",
-      marks: "3.0+ CGPA",
       image: "",
       subjects: ["Neural Networks", "ML Pipelines", "AI Systems Design"]
     },
     {
       id: 2,
-      degree: "Intermediate — Pre-Engineering (ICS Physics)",
+      degree: "ICS (Intermediate in Computer Science)",
       institution: "Government College University (GCU), Lahore",
       location: "Lahore, Pakistan",
       startDate: "2019",
       endDate: "2021",
       status: "Completed",
-      marks: "90%",
       image: "",
-      subjects: ["Computer Science", "Physics", "Student Leadership"]
+      subjects: ["Computer Science", "Physics", "Mathematics"]
     },
     {
       id: 3,
       degree: "Matriculation — Science",
-      institution: "KIPS Education System",
-      location: "Lahore, Pakistan",
+      institution: "Beaconhouse School System",
+      location: "Pakistan",
       startDate: "2017",
       endDate: "2019",
       status: "Completed",
-      marks: "Excellent",
       image: "",
-      subjects: ["Science Track", "Sports & Arts", "Academic Excellence"]
+      subjects: ["Science", "Mathematics", "Computer Studies"]
     }
   ],
 
