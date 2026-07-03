@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-scroll';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
