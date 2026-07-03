@@ -17,10 +17,10 @@
   gap: 12px;
   padding: 14px 16px;
   background: transparent;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s;
+  cursor: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-align: left;
   font-family: 'Inter', sans-serif;
   width: 100%;
@@ -28,7 +28,9 @@
 }
 .cert-list-item:hover {
   background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(0, 212, 255, 0.1);
   color: #ccc;
+  transform: translateX(6px);
 }
 .cert-list-active {
   background: rgba(0, 212, 255, 0.06);

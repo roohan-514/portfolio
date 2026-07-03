@@ -34,6 +34,15 @@
 
 .timeline-content {
   padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+}
+.timeline-content:hover {
+  border-color: rgba(0, 212, 255, 0.12);
+  background: rgba(255, 255, 255, 0.015);
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-header {

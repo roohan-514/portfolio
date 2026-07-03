@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-scroll';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiChevronDown, FiDownload } from 'react-icons/fi';
 import './Hero.css';
+
+const magnetic = (e) => {
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  const x = e.clientX - rect.left - rect.width / 2;
+  const y = e.clientY - rect.top - rect.height / 2;
+  el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+};
+
+const resetMagnetic = (e) => {
+  e.currentTarget.style.transform = 'translate(0, 0)';
+};
 
 const Hero = ({ profile }) => {
   const taglines = [
@@ -60,13 +72,13 @@ const Hero = ({ profile }) => {
           {profile.tagline}
         </motion.p>
         <motion.div className="hero-actions" variants={itemVariants}>
-          <Link to="projects" smooth={true} duration={500} className="btn btn-primary">
+          <Link to="projects" smooth={true} duration={500} className="btn btn-primary" onMouseMove={magnetic} onMouseLeave={resetMagnetic}>
             View Projects
           </Link>
-          <a href={`mailto:${profile.email}`} className="btn btn-outline">
+          <a href={`mailto:${profile.email}`} className="btn btn-outline" onMouseMove={magnetic} onMouseLeave={resetMagnetic}>
             Hire Me
           </a>
-          <a href={`${process.env.PUBLIC_URL}/documents/resume.pdf`} download className="btn btn-outline">
+          <a href={`${process.env.PUBLIC_URL}/documents/resume.pdf`} download className="btn btn-outline" onMouseMove={magnetic} onMouseLeave={resetMagnetic}>
             <FiDownload /> Resume
           </a>
         </motion.div>

@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="App">
+      <CustomCursor />
       <Header profile={profile} />
       <Hero profile={profile} />
       <About profile={profile} />

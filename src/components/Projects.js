@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import './Projects.css';
@@ -68,12 +68,31 @@ const getPalette = (title) => {
 const Projects = ({ projects, profile }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const [tilts, setTilts] = useState({});
 
   const sorted = [...projects].sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
     return a.id - b.id;
   });
+
+  const handleTilt = (id, e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+    setTilts(prev => ({ ...prev, [id]: { rotateX, rotateY } }));
+    card.style.setProperty('--mx', `${(x / rect.width) * 100}%`);
+    card.style.setProperty('--my', `${(y / rect.height) * 100}%`);
+  };
+
+  const resetTilt = (id) => {
+    setTilts(prev => ({ ...prev, [id]: { rotateX: 0, rotateY: 0 } }));
+  };
 
   return (
     <section id="projects" className="projects">
@@ -86,6 +105,7 @@ const Projects = ({ projects, profile }) => {
           {sorted.map((project, index) => {
             const [c1, c2] = getPalette(project.title);
             const icon = getIconForProject(project.title);
+            const tilt = tilts[project.id] || { rotateX: 0, rotateY: 0 };
             return (
               <motion.div
                 key={project.id}
@@ -93,6 +113,9 @@ const Projects = ({ projects, profile }) => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.06 }}
+                onMouseMove={(e) => handleTilt(project.id, e)}
+                onMouseLeave={() => resetTilt(project.id)}
+                style={{ transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`, transition: 'transform 0.1s ease-out' }}
               >
                 <div
                   className="project-image"
