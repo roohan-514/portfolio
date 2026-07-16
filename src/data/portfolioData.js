@@ -7,7 +7,7 @@ export const personalInfo = {
   email: "roohan.rizvi@gmail.com",
   phone: "+92 3234645458",
   resumeUrl: "/portfolio/resume.pdf",
-  avatar: "https://avatars.githubusercontent.com/u/132151644?v=4",
+  avatar: "https://avatars.githubusercontent.com/u/113782123?v=4",
   social: {
     github: "https://github.com/roohan-514",
     linkedin: "https://linkedin.com/in/roohan-ali-8a4b082a0/",
@@ -109,13 +109,34 @@ export const education = [
   },
 ];
 
+const projectImages = [
+  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1555949963-ff1cf47267a5?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1552820728-8b83bb6b2c2b?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop',
+]
+
 export const projects = [
   {
     id: 1,
     title: "AI-Powered Clinical Intelligence OS (CIOS)",
     description: "Hospital ERP with a 3-stage Clinical Intelligence Pipeline: ML risk scoring with SHAP explainability, qSOFA sepsis screening, and Claude API-powered assessments across 9 Dockerized microservices.",
     tags: ["FastAPI", "React", "Docker", "Claude API", "SHAP", "Kafka"],
-    image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop",
+    image: projectImages[0],
     links: { github: "https://github.com/roohan-514/ICU-MONITORING-SYSTEM", demo: "#" },
   },
   {
@@ -123,7 +144,7 @@ export const projects = [
     title: "BodyPose Observatory",
     description: "Real-time 3D human pose visualization dashboard using MediaPipe Pose Landmarker and Three.js, rendering live webcam skeletons with fall detection and vital-sign HUD overlays across 13 monitoring scenarios.",
     tags: ["Python", "MediaPipe", "Three.js", "React", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    image: projectImages[1],
     links: { github: "https://github.com/roohan-514/bodypose-dashboard", demo: "#" },
   },
   {
@@ -131,7 +152,7 @@ export const projects = [
     title: "RAG Chatbot System",
     description: "Document-grounded question-answering chatbot using LangChain and ChromaDB for retrieval-augmented generation over user-uploaded documents.",
     tags: ["LangChain", "ChromaDB", "FastAPI", "React", "OpenAI"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    image: projectImages[2],
     links: { github: "https://github.com/roohan-514/rag-chatbot-system", demo: "#" },
   },
   {
@@ -139,7 +160,7 @@ export const projects = [
     title: "MLOps Production Pipeline",
     description: "End-to-end MLOps pipeline with MLflow experiment tracking, Dockerized deployment, and automated drift detection and monitoring.",
     tags: ["MLflow", "Docker", "FastAPI", "Python", "CI/CD"],
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    image: projectImages[3],
     links: { github: "https://github.com/roohan-514/mlops-production-pipeline", demo: "#" },
   },
   {
@@ -147,7 +168,7 @@ export const projects = [
     title: "Deep Fake Audio Detection (FYP)",
     description: "BERT/VGG16-based ML models to detect AI-generated Urdu voice scams, with a web interface for real-time predictions and accuracy optimization.",
     tags: ["Python", "BERT", "VGG16", "TensorFlow", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop",
+    image: projectImages[4],
     links: { github: "https://github.com/roohan-514/DEEP-FAKE-AUDIO-DETECTION", demo: "#" },
   },
   {
@@ -155,7 +176,7 @@ export const projects = [
     title: "AI Code Review Assistant",
     description: "AI-powered code review tool that analyzes code quality, finds bugs, detects security vulnerabilities, and suggests improvements using OpenAI.",
     tags: ["Python", "OpenAI", "FastAPI", "React", "Docker"],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
+    image: projectImages[5],
     links: { github: "https://github.com/roohan-514/ai-code-review-assistant", demo: "#" },
   },
   {
@@ -163,7 +184,7 @@ export const projects = [
     title: "Ghost Decoder",
     description: "Steganography tool for hiding and extracting secret messages within images using pixel-level encoding techniques.",
     tags: ["Python", "Steganography", "Image Processing", "CLI"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&h=400&fit=crop",
+    image: projectImages[6],
     links: { github: "https://github.com/roohan-514/ghost-decoder", demo: "#" },
   },
   {
@@ -171,7 +192,7 @@ export const projects = [
     title: "Driver Drowsiness Monitoring",
     description: "Real-time driver monitoring using computer vision for drowsiness, yawning, and phone usage detection with YOLOv11.",
     tags: ["Python", "OpenCV", "YOLO", "MediaPipe", "React"],
-    image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=400&fit=crop",
+    image: projectImages[7],
     links: { github: "https://github.com/roohan-514/Driver-Drowsiness-Identity-Monitoring-System", demo: "#" },
   },
   {
@@ -179,7 +200,7 @@ export const projects = [
     title: "AI Facial Recognition Attendance",
     description: "AI-powered attendance system using facial recognition for automated, contactless check-ins.",
     tags: ["Python", "OpenCV", "Face Recognition", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=600&h=400&fit=crop",
+    image: projectImages[8],
     links: { github: "https://github.com/roohan-514/AI-Facial-Recognition-Attendance", demo: "#" },
   },
   {
@@ -187,7 +208,7 @@ export const projects = [
     title: "Image Preprocessing Engine",
     description: "Automated image preprocessing pipeline with augmentation, resizing, normalization, and format conversion for ML datasets.",
     tags: ["OpenCV", "Python", "C++", "NumPy", "Image Processing"],
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop",
+    image: projectImages[9],
     links: { github: "https://github.com/roohan-514/image-preprocessing", demo: "#" },
   },
   {
@@ -195,7 +216,7 @@ export const projects = [
     title: "AutoForge",
     description: "AI-powered code automation platform that generates REST APIs, database schemas, and executable code from plain English.",
     tags: ["Python", "FastAPI", "React", "Claude AI", "Docker"],
-    image: "https://images.unsplash.com/photo-1555949963-ff1cf47267a5?w=600&h=400&fit=crop",
+    image: projectImages[10],
     links: { github: "https://github.com/roohan-514/AUTOFORGE", demo: "#" },
   },
   {
@@ -203,7 +224,7 @@ export const projects = [
     title: "Stripe Payment System",
     description: "Robust payment and subscription management system integrated with Stripe API. Built with Node.js, Express, and MongoDB.",
     tags: ["Node.js", "Express", "Stripe", "MongoDB", "React"],
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop",
+    image: projectImages[11],
     links: { github: "https://github.com/roohan-514/stripe-payment-system", demo: "#" },
   },
   {
@@ -211,7 +232,7 @@ export const projects = [
     title: "Multiplayer FPS Game",
     description: "Browser-based 3D multiplayer first-person shooter with AI bots, voice chat, and CS-style maps built with Three.js.",
     tags: ["Three.js", "Node.js", "Socket.IO", "WebRTC"],
-    image: "https://images.unsplash.com/photo-1552820728-8b83bb6b2c2b?w=600&h=400&fit=crop",
+    image: projectImages[12],
     links: { github: "https://github.com/roohan-514/multiplayer-game", demo: "#" },
   },
   {
@@ -219,7 +240,7 @@ export const projects = [
     title: "AI Resume & Career Assistant",
     description: "AI-powered career assistant that helps build resumes, prepare for interviews, and discover career paths.",
     tags: ["Python", "React", "OpenAI", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=600&h=400&fit=crop",
+    image: projectImages[13],
     links: { github: "https://github.com/roohan-514/ai-resume-assistant", demo: "#" },
   },
   {
@@ -227,7 +248,7 @@ export const projects = [
     title: "Medical AI Diagnostic Assistant",
     description: "Medical diagnostic assistant leveraging AI to assist in preliminary health assessments.",
     tags: ["Python", "TensorFlow", "React", "FastAPI"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
+    image: projectImages[14],
     links: { github: "https://github.com/roohan-514/medical-ai-diagnostic", demo: "#" },
   },
   {
@@ -235,7 +256,7 @@ export const projects = [
     title: "System Design & Architecture",
     description: "In-depth system design and architecture documentation for production AI/ML systems with C4 diagrams, scaling analysis, and deployment strategies.",
     tags: ["System Design", "Architecture", "Distributed Systems"],
-    image: "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=600&h=400&fit=crop",
+    image: projectImages[15],
     links: { github: "https://github.com/roohan-514/system-design-architecture", demo: "#" },
   },
   {
@@ -243,7 +264,7 @@ export const projects = [
     title: "Open Source Contributions",
     description: "Open source toolkit featuring gitstat — a CLI tool that generates beautiful GitHub repo analytics reports.",
     tags: ["Python", "CLI", "GitHub API", "Open Source"],
-    image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=400&fit=crop",
+    image: projectImages[16],
     links: { github: "https://github.com/roohan-514/open-source-contributions", demo: "#" },
   },
   {
@@ -251,7 +272,7 @@ export const projects = [
     title: "Technical Blog Posts",
     description: "Collection of technical articles about building production AI/ML systems — real-time computer vision, RAG chatbots, MLOps pipelines, and more.",
     tags: ["Technical Writing", "AI", "ML", "Tutorials"],
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
+    image: projectImages[17],
     links: { github: "https://github.com/roohan-514/technical-blog-posts", demo: "#" },
   },
 ];
