@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { experience } from '../data/portfolioData'
+import { education } from '../data/portfolioData'
 
 const itemVariants = {
   hidden: { opacity: 0, x: -40 },
@@ -11,12 +11,12 @@ const itemVariants = {
   },
 }
 
-export default function Experience() {
+export default function Education() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="experience" className="section exp-section" ref={ref}>
+    <section id="education" className="section edu-section" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -24,32 +24,29 @@ export default function Experience() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Experience</span>
-          <h2 className="section-title">Where I've worked</h2>
+          <span className="section-label">Education</span>
+          <h2 className="section-title">My academic background</h2>
         </motion.div>
 
         <div className="timeline">
-          {experience.map((exp, i) => (
+          {education.map((edu, i) => (
             <motion.div
-              key={exp.id}
+              key={edu.id}
               className="timeline-item"
               variants={itemVariants}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
               transition={{ delay: i * 0.12 }}
             >
-              <div className="timeline-dot" />
+              <div className="timeline-dot edu" />
               <div className="timeline-card">
                 <div className="timeline-header">
-                  <h3 className="timeline-role">{exp.role}</h3>
-                  <span className="timeline-period">{exp.period}</span>
+                  <h3 className="timeline-role">{edu.degree}</h3>
+                  <span className="timeline-period">{edu.period}</span>
                 </div>
-                <p className="timeline-company">{exp.company}</p>
-                <ul className="timeline-desc">
-                  {exp.description.map((item, j) => (
-                    <li key={j}>{item}</li>
-                  ))}
-                </ul>
+                <p className="timeline-company">{edu.school}</p>
+                {edu.location && <p className="timeline-location">{edu.location}</p>}
+                <p className="timeline-desc-single">{edu.description}</p>
               </div>
             </motion.div>
           ))}
@@ -57,8 +54,8 @@ export default function Experience() {
       </div>
 
       <style>{`
-        .exp-section {
-          background: linear-gradient(180deg, #0f0f1a 0%, #0a0a0f 100%);
+        .edu-section {
+          background: linear-gradient(180deg, #0a0a0f 0%, #0f0f1a 100%);
         }
         .timeline {
           position: relative;
@@ -73,7 +70,7 @@ export default function Experience() {
           top: 0;
           bottom: 0;
           width: 2px;
-          background: linear-gradient(180deg, rgba(0, 212, 255, 0.3), rgba(99, 102, 241, 0.1));
+          background: linear-gradient(180deg, rgba(99, 102, 241, 0.3), rgba(0, 212, 255, 0.1));
         }
         .timeline-item {
           position: relative;
@@ -82,16 +79,16 @@ export default function Experience() {
         .timeline-item:last-child {
           padding-bottom: 0;
         }
-        .timeline-dot {
+        .timeline-dot.edu {
           position: absolute;
           left: -38px;
           top: 6px;
           width: 12px;
           height: 12px;
           border-radius: 50%;
-          background: #00d4ff;
+          background: #6366f1;
           border: 3px solid #0a0a0f;
-          box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.3);
+          box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
         }
         .timeline-card {
           background: rgba(255, 255, 255, 0.03);
@@ -101,7 +98,7 @@ export default function Experience() {
           transition: border-color 0.3s;
         }
         .timeline-card:hover {
-          border-color: rgba(0, 212, 255, 0.15);
+          border-color: rgba(99, 102, 241, 0.2);
         }
         .timeline-header {
           display: flex;
@@ -117,11 +114,11 @@ export default function Experience() {
         }
         .timeline-period {
           font-size: 0.8rem;
-          color: #00d4ff;
+          color: #6366f1;
           font-weight: 600;
           white-space: nowrap;
           padding: 4px 12px;
-          background: rgba(0, 212, 255, 0.08);
+          background: rgba(99, 102, 241, 0.08);
           border-radius: 20px;
         }
         .timeline-company {
@@ -130,29 +127,21 @@ export default function Experience() {
           margin-bottom: 4px;
           font-weight: 500;
         }
-        .timeline-desc {
-          list-style: none;
-          padding: 0;
+        .timeline-location {
+          font-size: 0.85rem;
+          color: #64748b;
+          margin-bottom: 12px;
         }
-        .timeline-desc li {
+        .timeline-desc-single {
           font-size: 0.9rem;
           color: #64748b;
           line-height: 1.7;
-          padding-left: 16px;
-          position: relative;
-          margin-bottom: 6px;
-        }
-        .timeline-desc li::before {
-          content: '▹';
-          position: absolute;
-          left: 0;
-          color: #00d4ff;
         }
         @media (max-width: 768px) {
           .timeline {
             padding-left: 24px;
           }
-          .timeline-dot {
+          .timeline-dot.edu {
             left: -30px;
           }
           .timeline-header {
