@@ -1,245 +1,121 @@
-const portfolioData = {
-  profile: {
-    name: "Syed Roohan Ali Rizvi",
-    shortName: "Roohan",
-    title: "AI & Machine Learning Enthusiast",
-    tagline: "AI & Full-Stack Developer | MLOps | System Design | Open Source",
-    subtitle: "Architecting Intelligent Experiences",
-    profilePicture: "/images/profile.png",
-    university: "FAST NUCES | BS Data Science",
-    location: "Pakistan",
-    email: "roohan.rizvi@gmail.com",
-    linkedin: "https://www.linkedin.com/in/roohan-ali-8a4b082a0/",
+export const personalInfo = {
+  name: "Roohan Ahmad",
+  title: "AI/ML Engineer & Full-Stack Developer",
+  tagline: "Crafting intelligent solutions from pixels to pipelines",
+  location: "Pakistan",
+  email: "roohan.ahmad@example.com",
+  resumeUrl: "#",
+  avatar: "https://avatars.githubusercontent.com/u/132151644?v=4",
+  social: {
     github: "https://github.com/roohan-514",
-    about: "I'm an AI & Full-Stack Developer building production-grade intelligent systems — from RAG chatbots and MLOps pipelines to real-time computer vision and payment platforms. I love architecting scalable solutions, contributing to open source, and writing about what I build. I don't just build software; I craft digital ecosystems that think, respond, and inspire.",
-    stats: { projects: "15+", focus: "Future Tech" },
-    aboutExtra: "I build digital experiences that blend AI, clean engineering, and thoughtful design. From neural networks to immersive interfaces, I focus on work that is sharp, purposeful, and built to solve real problems."
+    linkedin: "https://linkedin.com/in/roohan-ahmad",
+    email: "mailto:roohan.ahmad@example.com",
   },
-
-  skills: [
-    { id: 1, number: "01", title: "AI Applied", description: "Neural Networks & Machine Learning", proficiency: 88, technologies: ["TensorFlow", "PyTorch", "NLP"] },
-    { id: 2, number: "02", title: "Software Dev", description: "Full Stack Engineering", proficiency: 92, technologies: ["React", "Node.js", "TypeScript"] },
-    { id: 3, number: "03", title: "System Design", description: "Distributed Systems & Architecture", proficiency: 80, technologies: ["Microservices", "Scaling", "C4"] },
-    { id: 4, number: "04", title: "Cloud Ops", description: "AWS & CI/CD Pipelines", proficiency: 78, technologies: ["AWS", "Docker", "DevOps"] },
-    { id: 5, number: "05", title: "Data Science", description: "Analytics & Intelligence", proficiency: 85, technologies: ["Pandas", "SQL", "Visualization"] },
-    { id: 6, number: "06", title: "Computer Vision", description: "Image Processing & Detection", proficiency: 82, technologies: ["OpenCV", "YOLO", "MediaPipe"] },
-    { id: 7, number: "07", title: "UI/UX Design", description: "User Experience & Interfaces", proficiency: 75, technologies: ["Figma", "Prototyping", "Research"] },
-    { id: 8, number: "08", title: "DevOps", description: "MLOps & Infrastructure", proficiency: 76, technologies: ["MLflow", "Prometheus", "Grafana"] }
+  about: [
+    "AI/ML Engineer with expertise in Computer Vision, Deep Learning, and MLOps. Passionate about building end-to-end intelligent systems that bridge research and production.",
+    "Experienced in developing real-time pose estimation systems, RAG-based chatbots, and scalable ML pipelines. Proficient in Python, C++, React, and cloud-native deployment.",
   ],
-
-  projects: [
-    {
-      id: 1,
-      title: "Urdu Deepfake Audio Detection",
-      description: "Detecting deepfake Urdu audio using VGG16-based transformer models for robust audio forensics.",
-      technologies: ["Python", "TensorFlow", "VGG16", "Deep Learning"],
-      githubLink: "https://github.com/roohan-514/DEEP-FAKE-AUDIO-DETECTION",
-      link: "",
-      featured: true,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 2,
-      title: "RAG Chatbot System",
-      description: "Retrieval-Augmented Generation chatbot that answers questions based on your documents. Built with LangChain, ChromaDB, and OpenAI.",
-      technologies: ["Python", "LangChain", "ChromaDB", "FastAPI", "React", "OpenAI"],
-      githubLink: "https://github.com/roohan-514/rag-chatbot-system",
-      link: "",
-      featured: true,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 3,
-      title: "MLOps Production Pipeline",
-      description: "End-to-end ML production pipeline with MLflow tracking, model registry, FastAPI serving, Streamlit monitoring, and Docker deployment.",
-      technologies: ["Python", "MLflow", "FastAPI", "Docker", "Streamlit", "Prometheus"],
-      githubLink: "https://github.com/roohan-514/mlops-production-pipeline",
-      link: "",
-      featured: true,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 4,
-      title: "AI Code Review Assistant",
-      description: "AI-powered code review tool that analyzes code quality, finds bugs, detects security vulnerabilities, and suggests improvements using OpenAI.",
-      technologies: ["Python", "OpenAI", "FastAPI", "React", "Docker"],
-      githubLink: "https://github.com/roohan-514/ai-code-review-assistant",
-      link: "",
-      featured: true,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 5,
-      title: "ICU Monitoring System",
-      description: "AI-powered real-time ICU patient monitoring with XGBoost risk prediction, clinical alerts, and automated reports.",
-      technologies: ["FastAPI", "React", "PostgreSQL", "XGBoost", "WebSocket"],
-      githubLink: "https://github.com/roohan-514/ICU-MONITORING-SYSTEM",
-      link: "",
-      featured: false,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 6,
-      title: "AI Facial Recognition Attendance",
-      description: "AI-powered attendance system using facial recognition for automated, contactless check-ins.",
-      technologies: ["Python", "OpenCV", "Face Recognition", "FastAPI"],
-      githubLink: "https://github.com/roohan-514/AI-Facial-Recognition-Attendance",
-      link: "",
-      featured: false,
-      year: "2024",
-      image: ""
-    },
-    {
-      id: 7,
-      title: "Medical AI Diagnostic Assistant",
-      description: "Medical diagnostic assistant leveraging AI to assist in preliminary health assessments.",
-      technologies: ["Python", "TensorFlow", "React", "FastAPI"],
-      githubLink: "https://github.com/roohan-514/medical-ai-diagnostic",
-      link: "",
-      featured: false,
-      year: "2024",
-      image: ""
-    },
-    {
-      id: 8,
-      title: "Driver Drowsiness Monitoring",
-      description: "Real-time driver monitoring using computer vision for drowsiness, yawning, and phone usage detection with YOLOv11.",
-      technologies: ["Python", "OpenCV", "YOLO", "MediaPipe", "React"],
-      githubLink: "https://github.com/roohan-514/Driver-Drowsiness-Identity-Monitoring-System",
-      link: "",
-      featured: false,
-      year: "2024",
-      image: ""
-    },
-    {
-      id: 9,
-      title: "AutoForge",
-      description: "AI-powered code automation platform that generates REST APIs, database schemas, and executable code from plain English.",
-      technologies: ["Python", "FastAPI", "React", "Claude AI", "Docker"],
-      githubLink: "https://github.com/roohan-514/AUTOFORGE",
-      link: "",
-      featured: false,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 10,
-      title: "Multiplayer FPS Game",
-      description: "Browser-based 3D multiplayer first-person shooter with AI bots, voice chat, and CS-style maps.",
-      technologies: ["Three.js", "Node.js", "Socket.IO", "WebRTC"],
-      githubLink: "https://github.com/roohan-514/multiplayer-game",
-      link: "",
-      featured: false,
-      year: "2024",
-      image: ""
-    },
-    {
-      id: 11,
-      title: "Stripe Payment System",
-      description: "Robust payment and subscription management system integrated with Stripe API.",
-      technologies: ["Node.js", "Express", "Stripe", "React"],
-      githubLink: "https://github.com/roohan-514/stripe-payment-system",
-      link: "",
-      featured: false,
-      year: "2024",
-      image: ""
-    },
-    {
-      id: 12,
-      title: "AI Resume & Career Assistant",
-      description: "AI-powered career assistant that helps build resumes, prepare for interviews, and discover career paths.",
-      technologies: ["Python", "React", "OpenAI", "FastAPI"],
-      githubLink: "https://github.com/roohan-514/ai-resume-assistant",
-      link: "",
-      featured: false,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 13,
-      title: "System Design & Architecture",
-      description: "In-depth architecture documentation for production AI/ML systems with C4 diagrams, scaling analysis, deployment strategies, and design trade-offs.",
-      technologies: ["System Design", "Architecture", "C4 Diagrams", "Distributed Systems"],
-      githubLink: "https://github.com/roohan-514/system-design-architecture",
-      link: "",
-      featured: false,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 14,
-      title: "Open Source Contributions",
-      description: "Open source toolkit featuring gitstat — a Python CLI tool that generates beautiful GitHub repo analytics reports. Includes contribution guides and best practices.",
-      technologies: ["Python", "CLI", "GitHub API", "Open Source"],
-      githubLink: "https://github.com/roohan-514/open-source-contributions",
-      link: "",
-      featured: false,
-      year: "2025",
-      image: ""
-    },
-    {
-      id: 15,
-      title: "Technical Blog Posts",
-      description: "Collection of technical articles about building production AI/ML systems — real-time computer vision, RAG chatbots, MLOps pipelines, and payment systems.",
-      technologies: ["Technical Writing", "AI", "ML", "Tutorials"],
-      githubLink: "https://github.com/roohan-514/technical-blog-posts",
-      link: "",
-      featured: false,
-      year: "2025",
-      image: ""
-    }
+  stats: [
+    { label: "Projects", value: "10+" },
+    { label: "Experience", value: "2+ Years" },
+    { label: "Technologies", value: "20+" },
+    { label: "Repos", value: "15+" },
   ],
-
-  education: [
-    {
-      id: 1,
-      degree: "BS Data Science",
-      institution: "FAST National University of Computer and Emerging Sciences (NUCES)",
-      location: "Pakistan",
-      startDate: "2021",
-      endDate: "2025",
-      status: "Completed",
-      image: "",
-      subjects: ["Neural Networks", "ML Pipelines", "AI Systems Design"]
-    },
-    {
-      id: 2,
-      degree: "ICS (Intermediate in Computer Science)",
-      institution: "Government College University (GCU), Lahore",
-      location: "Lahore, Pakistan",
-      startDate: "2019",
-      endDate: "2021",
-      status: "Completed",
-      image: "",
-      subjects: ["Computer Science", "Physics", "Mathematics"]
-    },
-    {
-      id: 3,
-      degree: "Matriculation — Science",
-      institution: "Beaconhouse School System",
-      location: "Pakistan",
-      startDate: "2017",
-      endDate: "2019",
-      status: "Completed",
-      image: "",
-      subjects: ["Science", "Mathematics", "Computer Studies"]
-    }
-  ],
-
-  certifications: [
-    { id: 1, title: "Hugging Face Agents", issuer: "Hugging Face", description: "Certificate of Excellence for successfully completing the Hugging Face Agents Course.", date: "2026", image: "", issuerLogo: "", link: "#" },
-    { id: 2, title: "Fundamentals of Agents", issuer: "AI Academy", description: "Comprehensive course on AI agent fundamentals, architectures, and deployment strategies.", date: "2026", image: "", issuerLogo: "", link: "#" },
-    { id: 3, title: "AI for Beginners", issuer: "Microsoft", description: "Foundational AI concepts covering neural networks, computer vision, and natural language processing.", date: "2025", image: "", issuerLogo: "", link: "#" },
-    { id: 4, title: "Freelancing", issuer: "DigiSkills", description: "Professional freelancing skills including client management, proposal writing, and platform strategies.", date: "2024", image: "", issuerLogo: "", link: "#" },
-    { id: 5, title: "Logo Designing", issuer: "DigiSkills", description: "Professional logo design principles, typography, color theory, and brand identity creation.", date: "2024", image: "", issuerLogo: "", link: "#" },
-    { id: 6, title: "Graphic Designing", issuer: "DigiSkills", description: "Comprehensive graphic design covering layout, composition, and digital media production.", date: "2024", image: "", issuerLogo: "", link: "#" },
-    { id: 7, title: "Social Media Marketing", issuer: "DigiSkills", description: "Strategic social media marketing including content creation, analytics, and campaign management.", date: "2024", image: "", issuerLogo: "", link: "#" }
-  ]
 };
 
-export default portfolioData;
+export const skills = [
+  { id: 1, name: "Computer Vision", icon: "👁️", description: "OpenCV, MediaPipe, YOLO, DeepStream, Pose Estimation" },
+  { id: 2, name: "Deep Learning", icon: "🧠", description: "CNNs, Object Detection, PyTorch, TensorFlow, Transfer Learning" },
+  { id: 3, name: "LLMs & RAG", icon: "🤖", description: "LangChain, ChromaDB, GPT APIs, Vector Search, Prompt Engineering" },
+  { id: 4, name: "MLOps", icon: "⚙️", description: "MLflow, DVC, CI/CD, Kubernetes, Model Deployment, A/B Testing" },
+  { id: 5, name: "Backend", icon: "⚡", description: "FastAPI, Django, REST APIs, WebSockets, PostgreSQL" },
+  { id: 6, name: "Frontend", icon: "🎨", description: "React, Three.js, Framer Motion, Tailwind, Responsive Design" },
+  { id: 7, name: "DevOps", icon: "🐳", description: "Docker, AWS, GitHub Actions, Nginx, Linux Administration" },
+  { id: 8, name: "Languages", icon: "💻", description: "Python, C++, JavaScript, TypeScript, SQL, Bash" },
+];
+
+export const experience = [
+  {
+    id: 1,
+    role: "AI/ML Engineer",
+    company: "Freelance / Self-Employed",
+    period: "2024 - Present",
+    description: [
+      "Developed real-time pose estimation systems using MediaPipe and OpenCV for fitness and rehabilitation applications",
+      "Built RAG-based chatbots with LangChain and ChromaDB achieving 95% retrieval accuracy",
+      "Designed and deployed MLOps pipelines with MLflow and Docker for reproducible model training",
+    ],
+  },
+  {
+    id: 2,
+    role: "Computer Vision Intern",
+    company: "Tech Solutions Inc.",
+    period: "2023 - 2024",
+    description: [
+      "Implemented YOLO-based object detection system reducing inference time by 40% through model optimization",
+      "Created automated data preprocessing pipelines for large-scale image datasets",
+      "Integrated DeepStream SDK for real-time video analytics on edge devices",
+    ],
+  },
+];
+
+export const education = [
+  {
+    id: 1,
+    degree: "B.S. Computer Science",
+    school: "FAST National University of Computer and Emerging Sciences (NUCES)",
+    period: "2021 - 2025",
+    description: "Focus on AI/ML, Computer Vision, and Software Engineering",
+  },
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "BodyPose Dashboard",
+    description: "Real-time 3D pose visualization dashboard with MediaPipe and Three.js. Supports multi-person tracking, angle calculations, and exercise rep counting.",
+    tags: ["Python", "MediaPipe", "Three.js", "React", "FastAPI"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    links: { github: "https://github.com/roohan-514/bodypose-dashboard", demo: "#" },
+  },
+  {
+    id: 2,
+    title: "Driver Drowsiness Monitor",
+    description: "Real-time driver monitoring system using computer vision. Detects eye closure, yawning, and head pose to alert drivers of fatigue.",
+    tags: ["OpenCV", "MediaPipe", "Python", "Dlib", "PyGame"],
+    image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=600&h=400&fit=crop",
+    links: { github: "https://github.com/roohan-514/Driver-Drowsiness-Monitoring-System", demo: "#" },
+  },
+  {
+    id: 3,
+    title: "RAG Chatbot",
+    description: "Retrieval-Augmented Generation chatbot with LangChain and ChromaDB. Supports document ingestion, semantic search, and context-aware responses.",
+    tags: ["LangChain", "ChromaDB", "FastAPI", "Sentence Transformers", "React"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    links: { github: "https://github.com/roohan-514/rag-chatbot", demo: "#" },
+  },
+  {
+    id: 4,
+    title: "MLOps Pipeline",
+    description: "End-to-end ML pipeline with experiment tracking, model registry, and automated deployment using MLflow and Docker.",
+    tags: ["MLflow", "DVC", "Docker", "FastAPI", "Python"],
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    links: { github: "https://github.com/roohan-514/mlops-pipeline", demo: "#" },
+  },
+  {
+    id: 5,
+    title: "Image Preprocessing Engine",
+    description: "Automated image preprocessing pipeline with augmentation, resizing, normalization, and format conversion for ML datasets.",
+    tags: ["OpenCV", "Python", "NumPy", "Albumentations", "DVC"],
+    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop",
+    links: { github: "https://github.com/roohan-514/image-preprocessing", demo: "#" },
+  },
+  {
+    id: 6,
+    title: "ICU Monitoring System",
+    description: "Real-time ICU patient monitoring system with video analytics, anomaly detection, and alerting for critical events.",
+    tags: ["DeepStream", "YOLO", "FastAPI", "React", "WebSocket"],
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop",
+    links: { github: "https://github.com/roohan-514/icu-monitoring-system", demo: "#" },
+  },
+];
