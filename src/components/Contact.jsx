@@ -2,25 +2,45 @@ import { motion } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
 import { personalInfo } from '../data/portfolioData'
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.3,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+}
+
 export default function Contact() {
   return (
     <section id="contact" className="section contact-section">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
           className="contact-content"
         >
-          <span className="section-label">Contact</span>
-          <h2 className="section-title">Get in touch</h2>
-          <p className="contact-text">
+          <motion.span variants={itemVariants} className="section-label">Contact</motion.span>
+          <motion.h2 variants={itemVariants} className="section-title">Get in touch</motion.h2>
+          <motion.p variants={itemVariants} className="contact-text">
             I'm always open to discussing new projects, creative ideas, or opportunities
             to be part of your vision. Feel free to reach out!
-          </p>
+          </motion.p>
 
-          <div className="contact-links">
+          <motion.div variants={itemVariants} className="contact-links">
             <a href={personalInfo.social.email} className="contact-item">
               <FiMail className="contact-icon" />
               <span>{personalInfo.email}</span>
@@ -33,9 +53,9 @@ export default function Contact() {
               <FiMapPin className="contact-icon" />
               <span>{personalInfo.location}</span>
             </span>
-          </div>
+          </motion.div>
 
-          <div className="contact-social">
+          <motion.div variants={itemVariants} className="contact-social">
             <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer" className="contact-social-link">
               <FiGithub />
             </a>
@@ -45,7 +65,7 @@ export default function Contact() {
             <a href={personalInfo.social.email} className="contact-social-link">
               <FiMail />
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 

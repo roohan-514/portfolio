@@ -1,41 +1,73 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { personalInfo } from '../data/portfolioData'
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-100px' },
-  transition: { duration: 0.5 },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
 }
 
 export default function About() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+
   return (
-    <section id="about" className="section about-section">
+    <section id="about" className="section about-section" ref={ref}>
       <div className="container">
-        <motion.div {...fadeInUp}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+        >
           <span className="section-label">About Me</span>
           <h2 className="section-title">Turning complex problems into elegant AI solutions</h2>
           <div className="about-grid">
-            <div className="about-text">
+            <motion.div
+              className="about-text"
+              variants={containerVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            >
               {personalInfo.about.map((para, i) => (
-                <p key={i} className="about-para">{para}</p>
+                <motion.p key={i} className="about-para" variants={itemVariants}>
+                  {para}
+                </motion.p>
               ))}
-            </div>
-            <div className="about-stats">
-              {personalInfo.stats.map((stat, i) => (
+            </motion.div>
+            <motion.div
+              className="about-stats"
+              variants={containerVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            >
+              {personalInfo.stats.map((stat) => (
                 <motion.div
                   key={stat.label}
                   className="stat-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 >
                   <span className="stat-value">{stat.value}</span>
                   <span className="stat-label">{stat.label}</span>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -67,11 +99,11 @@ export default function About() {
           border-radius: 16px;
           padding: 28px 20px;
           text-align: center;
-          transition: all 0.3s;
+          transition: border-color 0.3s, box-shadow 0.3s;
+          cursor: default;
         }
         .stat-card:hover {
           border-color: rgba(0, 212, 255, 0.2);
-          transform: translateY(-4px);
           box-shadow: 0 8px 32px rgba(0, 212, 255, 0.08);
         }
         .stat-value {

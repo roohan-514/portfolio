@@ -2,6 +2,27 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { skills } from '../data/portfolioData'
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.3,
+    },
+  },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+}
+
 export default function Skills() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
@@ -10,23 +31,27 @@ export default function Skills() {
     <section id="skills" className="section skills-section" ref={ref}>
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
         >
           <span className="section-label">Skills & Expertise</span>
           <h2 className="section-title">Technologies I work with</h2>
         </motion.div>
 
-        <div className="skills-grid">
+        <motion.div
+          className="skills-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+        >
           {skills.map((skill, i) => (
             <motion.div
               key={skill.id}
               className="skill-card"
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.08, duration: 0.4 }}
+              variants={cardVariants}
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
             >
               <div className="skill-number">0{i + 1}</div>
               <div className="skill-icon">{skill.icon}</div>
@@ -34,7 +59,7 @@ export default function Skills() {
               <p className="skill-desc">{skill.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <style>{`
@@ -54,7 +79,7 @@ export default function Skills() {
           padding: 32px 24px;
           position: relative;
           overflow: hidden;
-          transition: all 0.4s;
+          transition: border-color 0.4s, box-shadow 0.4s;
           cursor: default;
         }
         .skill-card::before {
@@ -73,7 +98,6 @@ export default function Skills() {
         }
         .skill-card:hover {
           border-color: rgba(0, 212, 255, 0.2);
-          transform: translateY(-8px);
           box-shadow: 0 12px 48px rgba(0, 212, 255, 0.06);
         }
         .skill-number {

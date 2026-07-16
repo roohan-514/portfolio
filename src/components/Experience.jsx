@@ -1,15 +1,28 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { experience, education } from '../data/portfolioData'
 
+const itemVariants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+}
+
 export default function Experience() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+
   return (
-    <section id="experience" className="section exp-section">
+    <section id="experience" className="section exp-section" ref={ref}>
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
         >
           <span className="section-label">Experience & Education</span>
           <h2 className="section-title">My professional journey</h2>
@@ -20,10 +33,10 @@ export default function Experience() {
             <motion.div
               key={exp.id}
               className="timeline-item"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: i * 0.15 }}
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              transition={{ delay: i * 0.12 }}
             >
               <div className="timeline-dot" />
               <div className="timeline-card">
@@ -45,10 +58,10 @@ export default function Experience() {
             <motion.div
               key={edu.id}
               className="timeline-item"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: (experience.length + i) * 0.15 }}
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              transition={{ delay: (experience.length + i) * 0.12 }}
             >
               <div className="timeline-dot edu" />
               <div className="timeline-card">
@@ -57,6 +70,7 @@ export default function Experience() {
                   <span className="timeline-period">{edu.period}</span>
                 </div>
                 <p className="timeline-company">{edu.school}</p>
+                {edu.location && <p className="timeline-location">{edu.location}</p>}
                 <p className="timeline-desc-single">{edu.description}</p>
               </div>
             </motion.div>
@@ -110,7 +124,7 @@ export default function Experience() {
           border: 1px solid rgba(255, 255, 255, 0.06);
           border-radius: 16px;
           padding: 24px;
-          transition: all 0.3s;
+          transition: border-color 0.3s;
         }
         .timeline-card:hover {
           border-color: rgba(0, 212, 255, 0.15);
@@ -139,8 +153,13 @@ export default function Experience() {
         .timeline-company {
           font-size: 0.95rem;
           color: #94a3b8;
-          margin-bottom: 12px;
+          margin-bottom: 4px;
           font-weight: 500;
+        }
+        .timeline-location {
+          font-size: 0.85rem;
+          color: #64748b;
+          margin-bottom: 12px;
         }
         .timeline-desc {
           list-style: none;

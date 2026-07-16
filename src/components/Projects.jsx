@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useRef } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { projects } from '../data/portfolioData'
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+}
+
 export default function Projects() {
   const [hoveredId, setHoveredId] = useState(null)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="projects" className="section projects-section">
+    <section id="projects" className="section projects-section" ref={ref}>
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
         >
           <span className="section-label">Projects</span>
           <h2 className="section-title">What I've built</h2>
         </motion.div>
 
-        <div className="projects-grid">
-          {projects.map((project, i) => (
+        <motion.div
+          className="projects-grid"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+        >
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               className="project-card"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: i * 0.1 }}
+              variants={cardVariants}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
             >
               <div className="project-image-wrapper">
                 <img
@@ -69,7 +94,7 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <style>{`
@@ -87,11 +112,10 @@ export default function Projects() {
           border: 1px solid rgba(255, 255, 255, 0.06);
           border-radius: 20px;
           overflow: hidden;
-          transition: all 0.4s;
+          transition: border-color 0.4s, box-shadow 0.4s;
         }
         .project-card:hover {
           border-color: rgba(0, 212, 255, 0.15);
-          transform: translateY(-6px);
           box-shadow: 0 12px 48px rgba(0, 212, 255, 0.04);
         }
         .project-image-wrapper {
