@@ -39,35 +39,29 @@ export const skills = [
 export const experience = [
   {
     id: 1,
-    role: "AI-Based Learning Web Application Developer",
-    company: "Online Academy",
-    period: "Jan 2026 - Present",
+    role: "Software Engineer Intern",
+    company: "Techlogix",
+    period: "Apr 2026 - Present",
     description: [
-      "Built an LLM-powered AI tutor feature in a responsive React frontend",
-      "Accelerated course content production by roughly 35% through automated AI agent workflows",
-      "Worked in a 6-member Agile team delivering iterative releases",
+      "Reduced open bug backlog by an estimated 30%, as measured by sprint velocity, by refactoring FastAPI backend services, implementing RBAC-based access controls, and contributing to CI/CD pipeline reviews",
     ],
   },
   {
     id: 2,
-    role: "DevOps Intern",
-    company: "Systems Limited",
+    role: "AI-Based Learning Web Application Developer",
+    company: "Online Academy",
     period: "Jan 2026 - Feb 2026",
     description: [
-      "Cut manual deployment time by roughly 5 hours/week by automating Microsoft Azure VM provisioning",
-      "Reduced incident resolution time by an estimated 40%",
-      "Documented standardized deployment procedures for the team",
+      "Built an LLM-powered AI tutor feature in a responsive React frontend, accelerating course content production by roughly 35% through automated AI agent workflows in a 6-member Agile team",
     ],
   },
   {
     id: 3,
-    role: "Software Engineer Intern",
-    company: "Techlogix",
+    role: "DevOps Intern",
+    company: "Systems Limited",
     period: "Sep 2025 - Nov 2025",
     description: [
-      "Reduced open bug backlog by an estimated 30% by refactoring FastAPI backend services",
-      "Implemented RBAC-based access controls across the application",
-      "Contributed to CI/CD pipeline reviews and improvements",
+      "Cut manual deployment time by roughly 5 hours/week and incident resolution time by an estimated 40% by automating Microsoft Azure VM provisioning and documenting standardized deployment procedures",
     ],
   },
   {
@@ -76,8 +70,7 @@ export const experience = [
     company: "Techverx",
     period: "Jun 2024 - Aug 2024",
     description: [
-      "Reduced defect rate by an estimated 20% as measured by QA test pass rate",
-      "Debugged and tested feature releases under senior developer mentorship",
+      "Reduced defect rate by an estimated 20%, as measured by QA test pass rate, by debugging and testing feature releases under senior developer mentorship",
     ],
   },
 ];
