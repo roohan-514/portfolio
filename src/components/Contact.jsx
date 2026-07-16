@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin, FiMail, FiMapPin } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
 import { personalInfo } from '../data/portfolioData'
 
 export default function Contact() {
@@ -23,7 +23,11 @@ export default function Contact() {
           <div className="contact-links">
             <a href={personalInfo.social.email} className="contact-item">
               <FiMail className="contact-icon" />
-              <span>roohan.ahmad@example.com</span>
+              <span>{personalInfo.email}</span>
+            </a>
+            <a href={`tel:${personalInfo.phone}`} className="contact-item">
+              <FiPhone className="contact-icon" />
+              <span>{personalInfo.phone}</span>
             </a>
             <span className="contact-item">
               <FiMapPin className="contact-icon" />
