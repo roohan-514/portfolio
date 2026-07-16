@@ -46,7 +46,7 @@ export default function Hero() {
             transition={{ delay: 0.5 }}
             className="hero-actions"
           >
-            <a href={personalInfo.resumeUrl} className="btn btn-primary" download>
+            <a href={personalInfo.resumeUrl} className="btn btn-primary" download="Roohan_Ali_Resume.pdf">
               <FiDownload /> Resume
             </a>
             <a href={personalInfo.social.github} className="btn btn-icon" target="_blank" rel="noopener noreferrer">
