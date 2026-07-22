@@ -126,6 +126,7 @@ const projectImages = [
 export const certificates = [
   { id: 1, name: "Generative AI", file: "/portfolio/certificates/GEN_AI.pdf", icon: "🤖", description: "Generative AI fundamentals and applications" },
   { id: 2, name: "Prompt Engineering", file: "/portfolio/certificates/PROMPT_ENGINEERING.pdf", icon: "📝", description: "Advanced prompt engineering techniques" },
+  { id: 7, name: "Prompt Engineer", file: "/portfolio/certificates/PROMPT_ENGINEER.pdf", icon: "💬", description: "Prompt engineer specialization and best practices" },
   { id: 3, name: "Artificial Intelligence", file: "/portfolio/certificates/AI.pdf", icon: "🧠", description: "Comprehensive AI concepts and implementations" },
   { id: 4, name: "Data Analysis", file: "/portfolio/certificates/data_analysis.pdf", icon: "📊", description: "Data analysis methodologies and tools" },
   { id: 5, name: "Machine Learning", file: "/portfolio/certificates/Machine_Learning.pdf", icon: "⚙️", description: "Machine learning algorithms and models" },
