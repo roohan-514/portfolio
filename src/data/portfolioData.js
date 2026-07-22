@@ -123,6 +123,15 @@ const projectImages = [
   'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop',
 ]
 
+export const certificates = [
+  { id: 1, name: "Generative AI", file: "/portfolio/certificates/GEN_AI.pdf", icon: "🤖", description: "Generative AI fundamentals and applications" },
+  { id: 2, name: "Prompt Engineering", file: "/portfolio/certificates/PROMPT_ENGINEERING.pdf", icon: "📝", description: "Advanced prompt engineering techniques" },
+  { id: 3, name: "Artificial Intelligence", file: "/portfolio/certificates/AI.pdf", icon: "🧠", description: "Comprehensive AI concepts and implementations" },
+  { id: 4, name: "Data Analysis", file: "/portfolio/certificates/data_analysis.pdf", icon: "📊", description: "Data analysis methodologies and tools" },
+  { id: 5, name: "Machine Learning", file: "/portfolio/certificates/Machine_Learning.pdf", icon: "⚙️", description: "Machine learning algorithms and models" },
+  { id: 6, name: "Deep Learning & Neural Networks", file: "/portfolio/certificates/DEEP_LEARNING_AND_NEURAL_NETWORKS.pdf", icon: "🔗", description: "Deep learning architectures and neural networks" },
+]
+
 export const projects = [
   {
     id: 1,
