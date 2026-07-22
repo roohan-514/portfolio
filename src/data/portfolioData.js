@@ -131,6 +131,11 @@ export const certificates = [
   { id: 4, name: "Data Analysis", file: "/portfolio/certificates/data_analysis.pdf", icon: "📊", description: "Data analysis methodologies and tools" },
   { id: 5, name: "Machine Learning", file: "/portfolio/certificates/Machine_Learning.pdf", icon: "⚙️", description: "Machine learning algorithms and models" },
   { id: 6, name: "Deep Learning & Neural Networks", file: "/portfolio/certificates/DEEP_LEARNING_AND_NEURAL_NETWORKS.pdf", icon: "🔗", description: "Deep learning architectures and neural networks" },
+  { id: 8, name: "SQL", file: "/portfolio/certificates/SQL.pdf", icon: "🗄️", description: "SQL fundamentals and query optimization" },
+  { id: 9, name: "RDBMS", file: "/portfolio/certificates/RDBMS.pdf", icon: "🗃️", description: "Relational database management systems" },
+  { id: 10, name: "Indexing", file: "/portfolio/certificates/INDEXING.pdf", icon: "📑", description: "Database indexing strategies and performance" },
+  { id: 11, name: "Data Manipulation in SQL", file: "/portfolio/certificates/DATA_MANIPULATION_IN_SQL.pdf", icon: "✏️", description: "Data manipulation techniques in SQL" },
+  { id: 12, name: "Security, Maintenance & Integration", file: "/portfolio/certificates/SECURITY_MAINTAINANCE_AND_INTEGRATION.pdf", icon: "🔒", description: "Database security, maintenance, and BI integration" },
 ]
 
 export const projects = [
