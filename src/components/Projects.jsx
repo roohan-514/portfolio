@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi'
 import { projects } from '../data/portfolioData'
 
 const containerVariants = {
@@ -56,13 +56,16 @@ export default function Projects() {
               onMouseLeave={() => setHoveredId(null)}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
             >
-              <div className="project-image-wrapper">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                  loading="lazy"
-                />
+              <div
+                className="project-image-wrapper"
+                style={{
+                  background: `linear-gradient(135deg, ${project.gradient.from}, ${project.gradient.to})`,
+                }}
+              >
+                <div className="project-placeholder">
+                  <FiFolder className="placeholder-icon" />
+                  <span className="placeholder-initials">{project.initials}</span>
+                </div>
                 <AnimatePresence>
                   {hoveredId === project.id && (
                     <motion.div
@@ -75,9 +78,11 @@ export default function Projects() {
                         <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="project-link-btn">
                           <FiGithub /> Code
                         </a>
-                        <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="project-link-btn">
-                          <FiExternalLink /> Demo
-                        </a>
+                        {project.links.demo && (
+                          <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                            <FiExternalLink /> Demo
+                          </a>
+                        )}
                       </div>
                     </motion.div>
                   )}
@@ -122,15 +127,26 @@ export default function Projects() {
           position: relative;
           overflow: hidden;
           aspect-ratio: 3/2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
-        .project-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.6s;
+        .project-placeholder {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          opacity: 0.6;
         }
-        .project-card:hover .project-image {
-          transform: scale(1.05);
+        .placeholder-icon {
+          font-size: 3rem;
+          color: rgba(255, 255, 255, 0.7);
+        }
+        .placeholder-initials {
+          font-size: 1.5rem;
+          font-weight: 800;
+          color: rgba(255, 255, 255, 0.9);
+          letter-spacing: 3px;
         }
         .project-overlay {
           position: absolute;
