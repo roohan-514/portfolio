@@ -5115,6 +5115,7 @@ vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}vec4 mod289(vec4 x){ret
           backdrop-filter: blur(2px);
           opacity: 0;
           transition: opacity 0.3s;
+          z-index: 2;
         }
         .project-card:hover .project-overlay {
           opacity: 1;
