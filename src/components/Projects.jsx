@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { projects } from '../data/portfolioData'
 
 const containerVariants = {
@@ -24,7 +24,6 @@ const cardVariants = {
 }
 
 export default function Projects() {
-  const [hoveredId, setHoveredId] = useState(null)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -52,41 +51,29 @@ export default function Projects() {
               key={project.id}
               className="project-card"
               variants={cardVariants}
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
             >
-              <div
-                className="project-image-wrapper"
-                style={{
-                  background: `linear-gradient(135deg, ${project.gradient.from}, ${project.gradient.to})`,
-                }}
-              >
-                <div className="project-placeholder">
-                  <FiFolder className="placeholder-icon" />
-                  <span className="placeholder-initials">{project.initials}</span>
+              <div className="project-image-wrapper">
+                <div className="project-image-bg" style={{ background: `linear-gradient(135deg, ${project.gradient.from}, ${project.gradient.to})` }} />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                  loading="lazy"
+                  onError={(e) => { e.target.style.display = 'none' }}
+                />
+                <div className="project-overlay">
+                  <div className="project-links">
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                      <FiGithub /> Code
+                    </a>
+                    {project.links.demo && (
+                      <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                        <FiExternalLink /> Demo
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <AnimatePresence>
-                  {hoveredId === project.id && (
-                    <motion.div
-                      className="project-overlay"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                    >
-                      <div className="project-links">
-                        <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="project-link-btn">
-                          <FiGithub /> Code
-                        </a>
-                        {project.links.demo && (
-                          <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className="project-link-btn">
-                            <FiExternalLink /> Demo
-                          </a>
-                        )}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
               <div className="project-info">
                 <h3 className="project-title">{project.title}</h3>
@@ -127,26 +114,21 @@ export default function Projects() {
           position: relative;
           overflow: hidden;
           aspect-ratio: 3/2;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
-        .project-placeholder {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 8px;
-          opacity: 0.6;
+        .project-image-bg {
+          position: absolute;
+          inset: 0;
         }
-        .placeholder-icon {
-          font-size: 3rem;
-          color: rgba(255, 255, 255, 0.7);
+        .project-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: relative;
+          z-index: 1;
+          transition: transform 0.6s;
         }
-        .placeholder-initials {
-          font-size: 1.5rem;
-          font-weight: 800;
-          color: rgba(255, 255, 255, 0.9);
-          letter-spacing: 3px;
+        .project-card:hover .project-image {
+          transform: scale(1.05);
         }
         .project-overlay {
           position: absolute;
@@ -156,6 +138,12 @@ export default function Projects() {
           align-items: center;
           justify-content: center;
           backdrop-filter: blur(2px);
+          opacity: 0;
+          transition: opacity 0.3s;
+          z-index: 2;
+        }
+        .project-card:hover .project-overlay {
+          opacity: 1;
         }
         .project-links {
           display: flex;

@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { education } from '../data/portfolioData'
 
@@ -12,6 +12,7 @@ const itemVariants = {
 }
 
 export default function Education() {
+  const [hoveredEdu, setHoveredEdu] = useState(null)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -28,28 +29,55 @@ export default function Education() {
           <h2 className="section-title">My academic background</h2>
         </motion.div>
 
-        <div className="timeline">
-          {education.map((edu, i) => (
-            <motion.div
-              key={edu.id}
-              className="timeline-item"
-              variants={itemVariants}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              transition={{ delay: i * 0.12 }}
-            >
-              <div className="timeline-dot edu" />
-              <div className="timeline-card">
-                <div className="timeline-header">
-                  <h3 className="timeline-role">{edu.degree}</h3>
-                  <span className="timeline-period">{edu.period}</span>
+        <div className="edu-layout">
+          <div className="timeline">
+            {education.map((edu, i) => (
+              <motion.div
+                key={edu.id}
+                className={`timeline-item${hoveredEdu?.id === edu.id ? ' active' : ''}`}
+                variants={itemVariants}
+                initial="hidden"
+                animate={isInView ? 'visible' : 'hidden'}
+                transition={{ delay: i * 0.12 }}
+                onMouseEnter={() => setHoveredEdu(edu)}
+                onMouseLeave={() => setHoveredEdu(null)}
+              >
+                <div className="timeline-dot edu" />
+                <div className="timeline-card">
+                  <div className="timeline-header">
+                    <h3 className="timeline-role">{edu.degree}</h3>
+                    <span className="timeline-period">{edu.period}</span>
+                  </div>
+                  <p className="timeline-company">{edu.school}</p>
+                  {edu.location && <p className="timeline-location">{edu.location}</p>}
+                  <p className="timeline-desc-single">{edu.description}</p>
                 </div>
-                <p className="timeline-company">{edu.school}</p>
-                {edu.location && <p className="timeline-location">{edu.location}</p>}
-                <p className="timeline-desc-single">{edu.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="edu-preview">
+            {hoveredEdu && hoveredEdu.image ? (
+              <motion.div
+                className="edu-preview-card"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="edu-preview-image-wrapper">
+                  <img src={hoveredEdu.image} alt={hoveredEdu.school} className="edu-preview-image" />
+                </div>
+                <div className="edu-preview-info">
+                  <h3 className="edu-preview-title">{hoveredEdu.school}</h3>
+                  <p className="edu-preview-desc">{hoveredEdu.shortDescription}</p>
+                </div>
+              </motion.div>
+            ) : (
+              <div className="edu-preview-placeholder">
+                <span>Hover over an education item to see details</span>
               </div>
-            </motion.div>
-          ))}
+            )}
+          </div>
         </div>
       </div>
 
@@ -57,10 +85,15 @@ export default function Education() {
         .edu-section {
           background: linear-gradient(180deg, #0a0a0f 0%, #0f0f1a 100%);
         }
+        .edu-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+          align-items: start;
+          margin-top: 48px;
+        }
         .timeline {
           position: relative;
-          max-width: 800px;
-          margin-top: 48px;
           padding-left: 32px;
         }
         .timeline::before {
@@ -74,7 +107,8 @@ export default function Education() {
         }
         .timeline-item {
           position: relative;
-          padding-bottom: 40px;
+          padding-bottom: 32px;
+          cursor: pointer;
         }
         .timeline-item:last-child {
           padding-bottom: 0;
@@ -89,16 +123,21 @@ export default function Education() {
           background: #6366f1;
           border: 3px solid #0a0a0f;
           box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+          transition: box-shadow 0.3s;
+        }
+        .timeline-item.active .timeline-dot.edu {
+          box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.5);
         }
         .timeline-card {
           background: rgba(255, 255, 255, 0.03);
           border: 1px solid rgba(255, 255, 255, 0.06);
           border-radius: 16px;
           padding: 24px;
-          transition: border-color 0.3s;
+          transition: border-color 0.3s, background 0.3s;
         }
-        .timeline-card:hover {
-          border-color: rgba(99, 102, 241, 0.2);
+        .timeline-item.active .timeline-card {
+          border-color: rgba(99, 102, 241, 0.3);
+          background: rgba(99, 102, 241, 0.04);
         }
         .timeline-header {
           display: flex;
@@ -137,7 +176,63 @@ export default function Education() {
           color: #64748b;
           line-height: 1.7;
         }
-        @media (max-width: 768px) {
+
+        .edu-preview {
+          position: sticky;
+          top: 100px;
+        }
+        .edu-preview-card {
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 20px;
+          overflow: hidden;
+        }
+        .edu-preview-image-wrapper {
+          width: 100%;
+          aspect-ratio: 16/10;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.3);
+        }
+        .edu-preview-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .edu-preview-info {
+          padding: 24px;
+        }
+        .edu-preview-title {
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 8px;
+        }
+        .edu-preview-desc {
+          font-size: 0.9rem;
+          color: #94a3b8;
+          line-height: 1.7;
+        }
+        .edu-preview-placeholder {
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px dashed rgba(255, 255, 255, 0.08);
+          border-radius: 20px;
+          padding: 60px 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .edu-preview-placeholder span {
+          color: #475569;
+          font-size: 0.95rem;
+        }
+        @media (max-width: 900px) {
+          .edu-layout {
+            grid-template-columns: 1fr;
+          }
+          .edu-preview {
+            order: -1;
+          }
           .timeline {
             padding-left: 24px;
           }
