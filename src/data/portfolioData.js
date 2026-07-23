@@ -204,7 +204,7 @@ export const projects = [
     image: projectImages[0],
     gradient: projectGradients[0],
     initials: "CIOS",
-    links: { github: "https://github.com/roohan-514/ICU-MONITORING-SYSTEM", demo: "https://github.com/roohan-514/ICU-MONITORING-SYSTEM" },
+    links: { github: "https://github.com/roohan-514/ICU-MONITORING-SYSTEM", demo: "https://roohan-514.github.io/cios/" },
   },
   {
     id: 2,
@@ -224,7 +224,7 @@ export const projects = [
     image: projectImages[2],
     gradient: projectGradients[2],
     initials: "RAG",
-    links: { github: "https://github.com/roohan-514/rag-chatbot-system", demo: "https://github.com/roohan-514/rag-chatbot-system" },
+    links: { github: "https://github.com/roohan-514/rag-chatbot-system", demo: "https://roohan-514.github.io/rag-chatbot/" },
   },
   {
     id: 4,
@@ -254,7 +254,7 @@ export const projects = [
     image: projectImages[5],
     gradient: projectGradients[5],
     initials: "ACR",
-    links: { github: "https://github.com/roohan-514/ai-code-review-assistant", demo: "https://github.com/roohan-514/ai-code-review-assistant" },
+    links: { github: "https://github.com/roohan-514/ai-code-review-assistant", demo: "https://roohan-514.github.io/ai-code-review/" },
   },
   {
     id: 7,
@@ -274,7 +274,7 @@ export const projects = [
     image: projectImages[7],
     gradient: projectGradients[7],
     initials: "DDM",
-    links: { github: "https://github.com/roohan-514/Driver-Drowsiness-Identity-Monitoring-System", demo: "https://github.com/roohan-514/Driver-Drowsiness-Identity-Monitoring-System" },
+    links: { github: "https://github.com/roohan-514/Driver-Drowsiness-Identity-Monitoring-System", demo: "https://roohan-514.github.io/driver-drowsiness/" },
   },
   {
     id: 9,
@@ -304,7 +304,7 @@ export const projects = [
     image: projectImages[10],
     gradient: projectGradients[10],
     initials: "AF",
-    links: { github: "https://github.com/roohan-514/AUTOFORGE", demo: "https://github.com/roohan-514/AUTOFORGE" },
+    links: { github: "https://github.com/roohan-514/AUTOFORGE", demo: "https://roohan-514.github.io/autoforge/" },
   },
   {
     id: 12,
@@ -334,7 +334,7 @@ export const projects = [
     image: projectImages[13],
     gradient: projectGradients[13],
     initials: "RCA",
-    links: { github: "https://github.com/roohan-514/ai-resume-assistant", demo: "https://github.com/roohan-514/ai-resume-assistant" },
+    links: { github: "https://github.com/roohan-514/ai-resume-assistant", demo: "https://roohan-514.github.io/ai-resume/" },
   },
   {
     id: 15,
