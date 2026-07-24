@@ -182,6 +182,8 @@ export const blogPosts = [
 
 export const certificates = [
   { id: 13, name: "Frontend Developer (React)", file: "/portfolio/certificates/frontend_developer_react.pdf", icon: "⚛️", description: "React.js frontend development covering components, hooks, state management, and modern UI" },
+  { id: 14, name: "Software Engineer", file: "/portfolio/certificates/software_engineer.pdf", icon: "💻", description: "Software engineering fundamentals and best practices" },
+  { id: 15, name: "SQL Advanced", file: "/portfolio/certificates/sql_advanced.pdf", icon: "📊", description: "Advanced SQL queries, optimization, and database management" },
   { id: 1, name: "Generative AI", file: "/portfolio/certificates/GEN_AI.pdf", icon: "🤖", description: "Generative AI fundamentals and applications" },
   { id: 2, name: "Prompt Engineering", file: "/portfolio/certificates/PROMPT_ENGINEERING.pdf", icon: "📝", description: "Advanced prompt engineering techniques" },
   { id: 7, name: "Prompt Engineer", file: "/portfolio/certificates/PROMPT_ENGINEER.pdf", icon: "💬", description: "Prompt engineer specialization and best practices" },
