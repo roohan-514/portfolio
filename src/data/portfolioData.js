@@ -181,6 +181,7 @@ export const blogPosts = [
 ]
 
 export const certificates = [
+<<<<<<< HEAD
   { id: 13, name: "Frontend Developer (React)", file: "/portfolio/certificates/frontend_developer_react.pdf", icon: "⚛️", description: "React.js frontend development covering components, hooks, state management, and modern UI" },
   { id: 14, name: "Software Engineer", file: "/portfolio/certificates/software_engineer.pdf", icon: "💻", description: "Software engineering fundamentals and best practices" },
   { id: 15, name: "SQL Advanced", file: "/portfolio/certificates/sql_advanced.pdf", icon: "📊", description: "Advanced SQL queries, optimization, and database management" },
